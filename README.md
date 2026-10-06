@@ -27,3 +27,10 @@ The spy re-throws errors from the wrapped function. The call is still recorded (
 `undefined` as a return value is preserved and recorded — it is distinct from a thrown error, which sets the `threw` field instead.
 
 The timestamp comes from an injected clock function (defaulting to `Date.now`). Pass a fake clock in tests for deterministic timestamps.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
