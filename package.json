@@ -1,6 +1,6 @@
 {
   "name": "function-call-spy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Wraps a function to record every invocation's arguments, return value, thrown error, and timestamp for later inspection.",
   "type": "module",
   "main": "src/index.js",
